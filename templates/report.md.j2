@@ -1,0 +1,64 @@
+# Exposure Report
+
+**Report ID:** {{ report_id }}  
+**Prepared for:** {{ prepared_for }}  
+**Prepared by:** {{ prepared_by }}  
+**Report date:** {{ report_date }}  
+
+## Executive Summary
+{{ executive_summary }}
+
+## Incident Overview
+- **Discovery date:** {{ discovery_date }}
+- **Incident timeframe:** {{ incident_timeframe }}
+- **Detection source:** {{ detection_source }}
+- **Status:** {{ status }}
+
+{{ incident_overview }}
+
+## Exposure Details
+- **Data types involved:** {{ data_types }}
+- **Records affected (estimated):** {{ records_affected }}
+- **Systems involved:** {{ systems_involved }}
+- **Locations/storage:** {{ data_locations }}
+
+{{ exposure_details }}
+
+## Impact Assessment
+{{ impact_assessment }}
+
+## Root Cause Analysis
+{{ root_cause_analysis }}
+
+## Containment & Remediation
+### Actions Taken
+{{ actions_taken }}
+
+### Ongoing Actions
+{{ ongoing_actions }}
+
+## Recommendations
+{{ recommendations }}
+
+## Communications & Notifications
+- **Internal stakeholders:** {{ internal_stakeholders }}
+- **External notifications:** {{ external_notifications }}
+- **Regulatory requirements:** {{ regulatory_requirements }}
+
+{{ communications_notes }}
+
+## Timeline
+{% for item in timeline %}
+- **{{ item.date }}:** {{ item.description }}
+{% endfor %}
+
+## Appendix
+{{ appendix }}
+
+---
+
+## Disclaimers
+- This report is provided for informational purposes and reflects information available as of the report date.
+- Findings are based on the data sources supplied and may change as additional evidence becomes available.
+- This report does not constitute legal advice; consult counsel for regulatory or contractual obligations.
+- Distribution should be limited to authorized recipients and handled in accordance with applicable policies.
