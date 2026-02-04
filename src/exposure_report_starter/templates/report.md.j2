@@ -1,0 +1,83 @@
+# {{ report.report_title }}
+
+**Prepared for:** {{ report.prepared_for or report.organization }}  
+**Prepared by:** {{ report.prepared_by or "Exposure Report Team" }}  
+**Report date:** {{ report.report_date or "[Insert Date]" }}
+
+> **Data provenance disclaimer:** This report is based solely on the data sources provided by the client and other explicitly cited inputs. No additional data sources were accessed unless listed below.
+>
+> **No independent verification:** Findings, risk ratings, and recommendations are derived from the supplied materials and have not been independently verified.
+
+## Executive Summary
+
+{{ report.executive_summary }}
+
+## Scope
+
+{{ report.scope }}
+
+## Methodology
+
+{{ report.methodology }}
+
+## Findings
+
+{% if report.findings %}
+{% for finding in report.findings %}
+### {{ loop.index }}. {{ finding.title }}
+
+{{ finding.description }}
+
+{% if finding.impact %}- **Impact:** {{ finding.impact }}
+{% endif %}{% if finding.likelihood %}- **Likelihood:** {{ finding.likelihood }}
+{% endif %}
+{% endfor %}
+{% else %}
+_No findings provided._
+{% endif %}
+
+## Risk Ratings
+
+{% if report.risk_ratings %}
+| Risk | Score | Rationale |
+| --- | --- | --- |
+{% for rating in report.risk_ratings %}
+| {{ rating.label }} | {{ rating.score }} | {{ rating.rationale or "" }} |
+{% endfor %}
+{% else %}
+_No risk ratings provided._
+{% endif %}
+
+## Recommendations
+
+{% if report.recommendations %}
+{% for rec in report.recommendations %}
+### {{ loop.index }}. {{ rec.title }}
+
+{{ rec.description }}
+
+{% if rec.owner %}- **Owner:** {{ rec.owner }}
+{% endif %}{% if rec.target_date %}- **Target date:** {{ rec.target_date }}
+{% endif %}
+{% endfor %}
+{% else %}
+_No recommendations provided._
+{% endif %}
+
+## Appendix
+
+{% if report.appendix %}
+{{ report.appendix }}
+{% else %}
+_No appendix provided._
+{% endif %}
+
+### Data Sources
+
+{% if report.data_sources %}
+{% for source in report.data_sources %}
+- {{ source }}
+{% endfor %}
+{% else %}
+- Client-provided inputs only.
+{% endif %}
