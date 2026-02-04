@@ -1,0 +1,24 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Dependency directories
+node_modules/
+
+# Build output
+build/
+dist/
+coverage/
+
+# Python artifacts
+__pycache__/
+*.pyc
+.venv/
