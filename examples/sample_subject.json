@@ -1,0 +1,58 @@
+{
+  "subject": {
+    "legal_name": "Northwind Compliance Services LLC",
+    "trade_name": "Northwind Compliance",
+    "entity_type": "Limited Liability Company",
+    "industry": "Business Process Outsourcing",
+    "website": "https://www.northwind-compliance.example",
+    "headquarters": {
+      "address_line_1": "1000 Innovation Parkway",
+      "address_line_2": "Suite 400",
+      "city": "Rivergate",
+      "state": "CA",
+      "postal_code": "94000",
+      "country": "US"
+    },
+    "identifiers": {
+      "tax_id": "98-7654321",
+      "duns": "123456789"
+    }
+  },
+  "contacts": [
+    {
+      "role": "Primary Compliance Contact",
+      "name": "Jordan Lee",
+      "email": "jordan.lee@northwind-compliance.example",
+      "phone": "+1-555-0100"
+    },
+    {
+      "role": "Security Lead",
+      "name": "Avery Chen",
+      "email": "avery.chen@northwind-compliance.example",
+      "phone": "+1-555-0101"
+    }
+  ],
+  "operating_regions": [
+    "United States",
+    "Canada",
+    "United Kingdom"
+  ],
+  "data_handling": {
+    "data_types": [
+      "customer account records",
+      "billing metadata",
+      "service usage metrics"
+    ],
+    "retention_policy": "Records retained for 36 months unless legal hold applies.",
+    "encryption": {
+      "at_rest": "AES-256",
+      "in_transit": "TLS 1.2+"
+    }
+  },
+  "assessment_metadata": {
+    "submitted_by": "Internal Audit Automation",
+    "submission_date": "2025-02-01",
+    "reporting_period": "2024-Q4",
+    "notes": "Synthetic sample subject for CLI validation and demonstration purposes."
+  }
+}
